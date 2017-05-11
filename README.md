@@ -1,6 +1,9 @@
 # Intro to ADTs Galore
 These ADTs all allocate memory. Each interface contains the function needed to free the memory allocate. You must free anything you initially allocate space to.
 
+# Before Getting Started
+Read each interface file (each .h file) to see the functions and function definitions available. This will show you what each function is supposed to do, and the precautions you may need to take to free allocated memory.
+
 # Abstract Data Type Modules
 ## PriorityQueue
 An ADT module like a regular queue, except each additional element has a given priority. Elements with a higher priority are served before elements with lower priority.

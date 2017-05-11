@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <string.h>
-#include "../StrDeque.h"
+#include "../../StrDeque.h"
 
 // a simple test client for strdeque.c
 

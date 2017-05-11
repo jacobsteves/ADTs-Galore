@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../ArrSequence.h"
+#include "../../ArrSequence.h"
 
 /*
  This is simple I/O test client for sequence.c that

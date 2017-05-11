@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "../Inventory.h"
+#include "../../Inventory.h"
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>

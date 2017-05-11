@@ -2,19 +2,19 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../LLSequence.h"
+#include "../../PriQueue.h"
 
 /*
- This is simple I/O test client for sequence.c that
+ This is simple I/O test client for priqueue.c that
  uses a very specific input format.
 
  Failure to follow format might lead to undefined behaviour.
 
- l: print sequence_length
- a INT: print sequence_item_at
- i INT INT: sequence_insert_at
- r INT: sequence_remove_at
- p: sequence_print
+ l: prints priqueue_length
+ a ITEM PRI: priqueue_add
+ f: prints priqueue_front
+ r: prints priqueue_remove
+ p: priqueue_print
  q: quit
 */
 
@@ -30,29 +30,27 @@ int get_int(void) {
 }
 
 int main(void){
-  struct sequence *seq = sequence_create();
+  struct priqueue *pq = priqueue_create();
   while (1){
     char cmd;
     if (scanf(" %c", &cmd) != 1) break;
     if (cmd == 'q') break;
     if (cmd == 'l') {
-      printf("length: %d\n",sequence_length(seq));
+      printf("length: %d\n",priqueue_length(pq));
     } else if (cmd == 'a') {
-      int at = get_int();
-      printf("item_at(%d): %d\n",at,sequence_item_at(seq,at));
-    } else if (cmd == 'i') {
-      int at = get_int();
-      int val = get_int();
-      sequence_insert_at(seq,at,val);
+      int item = get_int();
+      int pri = get_int();
+      priqueue_add(pq, item, pri);
+    } else if (cmd == 'f') {
+      printf("front: %d\n",priqueue_front(pq));
     } else if (cmd == 'r') {
-      int at = get_int();
-      sequence_remove_at(seq,at);
+      printf("remove: %d\n",priqueue_remove(pq));
     } else if (cmd == 'p') {
-      sequence_print(seq);
+      priqueue_print(pq);
     } else {
       printf("Invalid command (%c).\n",cmd);
       break;
     }
   }
-  sequence_destroy(seq);
+  priqueue_destroy(pq);
 }

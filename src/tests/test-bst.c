@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../Bst.h"
+#include "../../Bst.h"
 
 /*
  This is simple I/O test client for bst.c that
