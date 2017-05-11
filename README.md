@@ -1,7 +1,8 @@
 # Intro to ADTs Galore
 These ADTs all allocate memory. Each interface contains the function needed to free the memory allocate. You must free anything you initially allocate space to.
 
-# PriorityQueue
+# Abstract Data Type Modules
+## PriorityQueue
 An ADT module like a regular queue, except each additional element has a given priority. Elements with a higher priority are served before elements with lower priority.
 
 ## Inventory
@@ -22,6 +23,7 @@ This implementation uses an array rather than a linked list.
 ### LLSequence
 This implementation uses a linked list rather than an array.
 
+# Misc
 ## SetUp
 To start, copy this repo to any IDE running C. From there, use the information in the interface to set up your desired ADT.
 
