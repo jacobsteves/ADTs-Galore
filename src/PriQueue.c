@@ -1,4 +1,4 @@
-#include "priqueue.h"
+#include "../PriQueue.h"
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>

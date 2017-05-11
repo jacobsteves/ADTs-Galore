@@ -1,40 +1,36 @@
 struct priqueue;
 
-// NOTES: All of the following functions REQUIRE:
-//        pointers to a priqueue (e.g., pq) are valid (not NULL)
-//
-//       For times, n is the size of the priqueue
-//
-//       While the contracts below indicate that the order for "ties"
-//       does not matter, you must follow the priqueue instructions
-//
-//       There can be duplicates in a priqueue
-//       that have the same item and/or priority
-
+// INFO:
+// A priqueue is an ADT module like a regular queue, except each additional element has a given priority.
+// Elements with a higher priority are served before elements with lower priority.
 
 // priqueue_create() returns a pointer to a new (empty) priqueue
-// effects: allocates memory (caller must call priqueue_destroy)
+// effects: allocates memory (user must call priqueue_destroy)
+// requires: pointers to a priqueue are valid
 // time: O(1)
 struct priqueue *priqueue_create(void);
 
 // priqueue_destroy(pq) frees all dynamically allocated memory
 // effects: the memory at pq is invalid (freed)
+// requires: pointers to a priqueue (e.g., pq) are valid (not NULL)
 // time: O(1)
 void priqueue_destroy(struct priqueue *pq);
 
 // priqueue_length(pq) determines how many items are in pq
+// requires: pointers to a priqueue are valid
 // time: O(1)
 int priqueue_length(const struct priqueue *pq);
 
 // priqueue_add(pq, item, priority) inserts item with priority into pq
 // effects: modifies pq
+// requires: pointers to a priqueue are valid
 // time: O(logn)
 void priqueue_add(struct priqueue *pq, int item, int priority);
 
 // priqueue_front(pq) returns the item with the highest priority.
 //   If there are multiple items with the same priority,
 //   the order does not matter.
-// requires: pq is not empty
+// requires: pq is not empty, pointers to a priqueue are valid
 // time : O(1)
 int priqueue_front(const struct priqueue *pq);
 
@@ -42,7 +38,7 @@ int priqueue_front(const struct priqueue *pq);
 //   priority in pq.
 //   If there are multiple items with the same priority,
 //   the order does not matter.
-// requires: pq is not empty
+// requires: pq is not empty, pointers to a priqueue are valid
 // effects: modifies pq
 // time: O(logn)
 int priqueue_remove(struct priqueue *pq);
@@ -59,6 +55,6 @@ int priqueue_remove(struct priqueue *pq);
 //         (5,20)  (2,30)
 //   then it will be printed as "[(1:99),(5:20),(2:30)]\n"
 //   where each node is printed as (item:priority).
-//   If empty, it prints as "[empty]\n"
+// requires: pointers to a priqueue are valid
 // time: O(n)
 void priqueue_print(const struct priqueue *pq);
