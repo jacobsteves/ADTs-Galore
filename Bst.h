@@ -1,5 +1,10 @@
 #include <stdbool.h>
 
+// INFO:
+// A bst is a binary search tree. Each node in the bst is larger than its left child,
+// yet smaller than its right child. When removing nodes, it is very important to not
+// remove its children.
+
 extern const int PRE_ORDER;
 extern const int IN_ORDER;
 extern const int POST_ORDER;
@@ -8,7 +13,7 @@ struct bstnode {
   int item;
   struct bstnode *left;
   struct bstnode *right;
-  int size;                // NEW !
+  int size;
 };
 
 struct bst {
@@ -31,21 +36,21 @@ int bst_size(struct bst *t);
 
 // bst_insert(i, t) inserts the item i into the bst t
 // effects: modifies t if i is not already in t
-// time: O(h)
+// time: O(h), h is height of tree
 void bst_insert(int i, struct bst *t);
 
 // bst_find(i, t) determines if i is in t
-// time: O(h) where h is the height of the tree
+// time: O(h), h is height of tree
 bool bst_find(int i, struct bst *t);
 
 // bst_select(k, t) returns the k'th element from t in sorted order
 // requires: 0 <= k < bst_size(t)
-// time: O(h)
+// time: O(h), h is height of tree
 int bst_select(int k, struct bst *t);
 
 // bst_remove(i, t) removes i from bst t if it exists
 // effects: modifies t if i is in t
-// time: O(h)
+// time: O(h), h is height of tree
 void bst_remove (int i, struct bst *t);
 
 // bst_range(start, end, t) returns the number of items in t that are
@@ -83,7 +88,7 @@ int *bst_to_sorted_array(struct bst *t);
 //   in the tree, the heights of the left and right sub trees differ by
 //   at most 1
 // requires: a is sorted in ascending order (no duplciates), len >= 1
-// time: O(nlogn), or O(n) for bonus marks
+// time: O(nlogn)
 struct bst *sorted_array_to_bst(int *a, int len);
 
 // bst_rebalance(t) changes t so that it contains all of the same items,
