@@ -11,7 +11,7 @@ struct priqueue;
 struct priqueue *priqueue_create(void);
 
 // priqueue_destroy(pq) frees all dynamically allocated memory
-// effects: the memory at pq is invalid (freed)
+// effects: the memory at pq is freed and now invalid
 // requires: pointers to a priqueue (e.g., pq) are valid (not NULL)
 // time: O(1)
 void priqueue_destroy(struct priqueue *pq);
@@ -43,8 +43,8 @@ int priqueue_front(const struct priqueue *pq);
 // time: O(logn)
 int priqueue_remove(struct priqueue *pq);
 
-// NOTE: priqueue_print violates the principle of information hiding
-//       but is required to properly test your code
+// NOTE: priqueue_print is just for testing. It violates the principles of
+//       information hiding.
 
 // priqueue_print(pq) prints pq
 // effects: displays output

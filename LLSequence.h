@@ -1,5 +1,3 @@
-// A module for an int sequence ADT
-
 struct sequence;
 
 // INFO:

@@ -1,5 +1,3 @@
-// A module for an inventory ADT with string items and int qtys
-
 struct inventory;
 
 // INFO:
@@ -14,7 +12,7 @@ struct inventory *inventory_create(void);
 
 // inventory_destroy(inv) frees all dynamically allocated memory
 // requires: pointers to a inventory are valid
-// effects: the memory at inv is invalid (freed)
+// effects: the memory at inv is freed and now invalid
 // time : O(n)
 void inventory_destroy(struct inventory *inv);
 

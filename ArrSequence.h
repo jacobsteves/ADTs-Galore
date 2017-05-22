@@ -12,7 +12,7 @@ struct sequence *sequence_create(void);
 
 // sequence_destroy(seq) frees all dynamically allocated memory
 // requires: pointers to a sequence are valid
-// effects: the memory at seq is invalid (freed)
+// effects: the memory at seq is freed and now invalid
 // time: O(1)
 void sequence_destroy(struct sequence *seq);
 

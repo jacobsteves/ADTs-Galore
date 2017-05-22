@@ -13,7 +13,7 @@ struct strdeque *strdeque_create(void);
 
 // strdeque_destroy(sdeq) frees all dynamically allocated memory
 // requires: pointers to a strdeque are valid, pointers to a string are valid strings
-// effects: the memory at sd is invalid (freed)
+// effects: the memory at sd is freed and now invalid
 // time: O(n)
 void strdeque_destroy(struct strdeque *sdeq);
 
